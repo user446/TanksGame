@@ -1,7 +1,10 @@
 # TanksGame
 Simpe Tanks vs. Monsters game created for BANZAI.GAMES test purposes
 
-Control the Tank against hordes of monsters!
+Control the Tank against hordes of monsters!  
+Up to 10 monsters in one scene, each one generated randomly behind the scene. Each monster have armor, attack speed, damage and many other properties.  
+Game incluses 6 Monsters and 5 types of weapons, each have unique artstyle and features.  
+
 Controls:  
 q - previous weapon  
 w - next weapon  
