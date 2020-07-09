@@ -1,8 +1,6 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
 /.vs/
 .vscode
 Temp
@@ -27,10 +25,4 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
-
-/Assets/Lib/Ferr/Common/Data/cache.txt
-"/Assets/Lib/Screen Ripple/Material/Ripple 1.mat"
-"/Assets/Lib/Screen Ripple/Material/Ripple 2.mat"
-/.vs/
-build
 
