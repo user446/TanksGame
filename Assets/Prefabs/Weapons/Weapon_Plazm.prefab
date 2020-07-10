@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Plazma Gun
-  attackDamage: 50
+  attackDamage: 75
   attackCooldown: 0.5
   launchers:
   - {fileID: 800094189930217122}

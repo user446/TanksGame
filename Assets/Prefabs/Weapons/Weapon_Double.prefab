@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Double Gun
   attackDamage: 100
-  attackCooldown: 0.75
+  attackCooldown: 1
   launchers:
   - {fileID: 757752482548266797}
   - {fileID: 1168835056180042136}

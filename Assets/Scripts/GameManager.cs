@@ -50,10 +50,14 @@ public class GameManager : MonoBehaviour
 
     void CallForNewCreatures()
     {
-        if(monsterSpawnEnabled)
         foreach(var s in spawners)
         {
-            s.SpawnNewCreature();
+            if(monsterSpawnEnabled)
+                s.SpawnNewCreature();
+            else
+            {
+                break;
+            }
         }
     }
 

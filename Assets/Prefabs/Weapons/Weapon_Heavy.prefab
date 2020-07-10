@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Heavy Gun
-  attackDamage: 200
+  attackDamage: 250
   attackCooldown: 1
   launchers:
   - {fileID: 3109649653451917224}

@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Laser Gun
-  attackDamage: 20
-  attackCooldown: 0.01
+  attackDamage: 5
+  attackCooldown: 0.02
   launchers:
   - {fileID: 7206217881098599553}
 --- !u!61 &188598394577202893
