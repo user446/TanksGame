@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class MonsterBase : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class MonsterBase : MonoBehaviour
     public Armor armor;
     public Combat combat;
     private MonsterBrain brain;
+    public Action<float> onTakingDamage;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,9 +22,14 @@ public class MonsterBase : MonoBehaviour
                     if(armor != null)
                     {
                         health.DoDelta(-pr.damage * (1 - armor.absorbPercentage));
+                        onTakingDamage(pr.damage * (1 - armor.absorbPercentage));
                     }
                     else
+                    {
                         health.DoDelta(-pr.damage);
+                        onTakingDamage(pr.damage);
+                    }
+
                 }
             }
         }
@@ -37,11 +44,6 @@ public class MonsterBase : MonoBehaviour
 
         brain.SetTarget(GameManager.GetPlayer().transform);
         health.onDeath += Death;
-    }
-
-    void Update()
-    {
-        
     }
 
     void Death()

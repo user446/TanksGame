@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     private Vector2 screenBounds;
     private MonsterBase[] monsters;
     private SceneLoader sceneLoader;
+    public ScoreUI scoreUI;
 
     void GameOver()
     {
@@ -46,6 +48,11 @@ public class GameManager : MonoBehaviour
         GarbageCollector();
         CallForNewCreatures();
         MonsterHolder();
+    }
+
+    void CountDamage(float dmg)
+    {
+        scoreUI.score += (int)dmg;
     }
 
     void CallForNewCreatures()
@@ -70,6 +77,12 @@ public class GameManager : MonoBehaviour
         }
         else
             monsterSpawnEnabled = true;
+        foreach(var m in monsters)
+        {
+            if(m.onTakingDamage != CountDamage)
+                m.onTakingDamage = CountDamage;
+        
+        }
     }
 
     void GarbageCollector()

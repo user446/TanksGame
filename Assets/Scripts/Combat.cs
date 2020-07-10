@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 //class for close combat
 public class Combat : MonoBehaviour
@@ -8,11 +9,6 @@ public class Combat : MonoBehaviour
     public float attackSpeed;
     private float attackCooldown;
     public LayerMask attackLayer;
-    
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +23,7 @@ public class Combat : MonoBehaviour
     {
         if(attackCooldown < 0)
         {
+            attackCooldown = 1f/attackSpeed;
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackRange, attackLayer);
             foreach(var c in colliders)
             {
@@ -37,12 +34,17 @@ public class Combat : MonoBehaviour
                     if(c_armor != null)
                     {
                         c_health.DoDelta(-attackDamage * (1 - c_armor.absorbPercentage));
+                        if(c.tag == "Monster" && c.GetComponent<MonsterBase>() != null)
+                            c.GetComponent<MonsterBase>().onTakingDamage(attackDamage * (1 - c_armor.absorbPercentage));
                     }
                     else
+                    {
                         c_health.DoDelta(-attackDamage);
+                        if(c.tag == "Monster" && c.GetComponent<MonsterBase>() != null)
+                            c.GetComponent<MonsterBase>().onTakingDamage(attackDamage);
+                    }
                 }
             }
-            attackCooldown = 1f/attackSpeed;
         }
     }
 
