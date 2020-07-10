@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Weapon class
+/// </summary>
 public class Weapon : MonoBehaviour
 {
     public string weaponName;
@@ -8,6 +11,9 @@ public class Weapon : MonoBehaviour
     public ProjectileLauncher[] launchers;
     private float lastLaunchTime;
 
+    /// <summary>
+    /// Launches projectile from each launcher and applies damage
+    /// </summary>
     public void LaunchProjectile()
     {
         if(Time.time > lastLaunchTime + attackCooldown)

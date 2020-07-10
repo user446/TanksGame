@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Projectile class that destroys projectile after any collision outside Player prefab
+/// </summary>
 public class Projectile : MonoBehaviour
 {
     public float damage;

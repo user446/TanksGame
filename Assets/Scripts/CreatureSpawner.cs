@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Creature spawner class
+/// Holds a list of creature prefabs and spawns random one each 1/spawnCooldown seconds
+/// </summary>
 public class CreatureSpawner : MonoBehaviour
 {
     private float spawnCooldown;
@@ -12,6 +16,9 @@ public class CreatureSpawner : MonoBehaviour
         spawnCooldown -= Time.deltaTime;
     }
 
+    /// <summary>
+    /// Spawns a random creature once spawnCooldown has reached 0
+    /// </summary>
     public void SpawnNewCreature()
     {
         if(spawnCooldown < 0)

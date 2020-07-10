@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Armor class
+/// Holds all properties of armor of a prefab
+/// Allows to make a delta on armor condition thus making it breakable
+/// </summary>
 public class Armor : MonoBehaviour
 {
     public float maxCondition = 100;

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// Monster base class
+/// </summary>
 public class MonsterBase : MonoBehaviour
 {
     public Health health;
@@ -9,10 +12,16 @@ public class MonsterBase : MonoBehaviour
     private MonsterBrain brain;
     public Action<float> onTakingDamage;
 
+    /// <summary>
+    /// Each time monser is hit by a projectile we shoud count damage
+    /// </summary>
+    /// <param name="collision"></param>
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //check if monster was damaged by a player
         if(collision.collider.tag == "Player")
         {
+            //check if it is a projectile
             var pr = collision.collider.GetComponent<Projectile>();
             if(pr != null)
             {
@@ -22,6 +31,7 @@ public class MonsterBase : MonoBehaviour
                     if(armor != null)
                     {
                         health.DoDelta(-pr.damage * (1 - armor.absorbPercentage));
+                        //send damage outside of a script
                         onTakingDamage(pr.damage * (1 - armor.absorbPercentage));
                     }
                     else

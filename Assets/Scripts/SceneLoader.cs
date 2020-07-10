@@ -2,6 +2,9 @@
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
+/// <summary>
+/// Scene loader class to manage scenes
+/// </summary>
 public class SceneLoader : MonoBehaviour
 {
     public void LoadGame()

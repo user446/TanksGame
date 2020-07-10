@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System;
 
-//class for close combat
+/// <summary>
+/// Class for close combat
+/// Calls for Attack() are allowed each 1/attackCooldown second
+/// </summary>
 public class Combat : MonoBehaviour
 {
     public float attackDamage;
@@ -19,6 +22,9 @@ public class Combat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if any prefab on attackLayer is inside circle of attackRange and applies damage based on armor of these prefabs
+    /// </summary>
     public void Attack()
     {
         if(attackCooldown < 0)
@@ -34,6 +40,7 @@ public class Combat : MonoBehaviour
                     if(c_armor != null)
                     {
                         c_health.DoDelta(-attackDamage * (1 - c_armor.absorbPercentage));
+                        // if attack aim is a monster then count damange into a Score UI
                         if(c.tag == "Monster" && c.GetComponent<MonsterBase>() != null)
                             c.GetComponent<MonsterBase>().onTakingDamage(attackDamage * (1 - c_armor.absorbPercentage));
                     }
@@ -48,6 +55,9 @@ public class Combat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Makes easier to ajust attack range in the Inspector
+    /// </summary>
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, attackRange);

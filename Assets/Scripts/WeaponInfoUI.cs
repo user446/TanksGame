@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class to show weapon name on weapon UI section
+/// </summary>
 public class WeaponInfoUI : MonoBehaviour
 {
     public Text weaponInfo;

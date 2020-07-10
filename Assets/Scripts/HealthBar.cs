@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class to control Health bar UI
+/// </summary>
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
@@ -13,6 +16,9 @@ public class HealthBar : MonoBehaviour
         healthText.text = player.GetComponent<Health>().maxHealth.ToString();
     }
 
+    /// <summary>
+    /// Update slider and text values to show new health amount
+    /// </summary>
     void Update()
     {
         if(player != null)

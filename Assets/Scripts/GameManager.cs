@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// Game Manager class
+/// Manages the amount of monsters on a scene
+/// Cleans all projectiles outcoming screen boundaries
+/// Sends score updates to score UI
+/// </summary>
 public class GameManager : MonoBehaviour
 {
 
@@ -55,6 +61,9 @@ public class GameManager : MonoBehaviour
         scoreUI.score += (int)dmg;
     }
 
+    /// <summary>
+    /// Call for new creatures on each Creature Spawner prefab if spawning is enabled
+    /// </summary>
     void CallForNewCreatures()
     {
         foreach(var s in spawners)
@@ -68,6 +77,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Counts the amount of monsters on a scene and
+    /// disables spawning if their number have reached monsterCountMax
+    /// applies CountDamage on onTakingDamage action to update Score UI
+    /// </summary>
     void MonsterHolder()
     {
         monsters = FindObjectsOfType<MonsterBase>();
@@ -85,6 +99,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Destroys all projectiles outside screen boudaries since player can not reach anything outside
+    /// </summary>
     void GarbageCollector()
     {
         projectiles = FindObjectsOfType<Projectile>();

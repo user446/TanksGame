@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Player Base class
+/// It's a root for all player based scripts
+/// </summary>
 public class PlayerBase : MonoBehaviour
 {
     public List<GameObject> possibleWeapons;
@@ -24,13 +28,14 @@ public class PlayerBase : MonoBehaviour
         combat = GetComponent<Combat>();
         controller = GetComponent<PlayerController>();
 
+        //add calls on controller actions
         controller.onMoving += OnMoving;
         controller.onStopMoving += OnStopMoving;
         controller.onAttack += Attack;
         controller.onNextWeapon += InstallNextWeapon;
         controller.onPrevWeapon += InstallPreviousWeapon;
 
-        health.onDeath += Death;
+        health.onDeath += Death;    //add a new call upon player's death
     }
 
     void Update()
@@ -42,7 +47,7 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
-    void Death()
+    private void Death()
     {
         OnStopMoving();
         combat.enabled = false;
@@ -91,6 +96,9 @@ public class PlayerBase : MonoBehaviour
         InstallWeapon(); 
     }
 
+    /// <summary>
+    /// Function to instantiate a new weapon inside player prefab
+    /// </summary>
     private void InstallWeapon()
     {
         var new_weapon = Instantiate(possibleWeapons[currentWeaponIndex], transform.position, transform.rotation);
@@ -99,6 +107,9 @@ public class PlayerBase : MonoBehaviour
         weapon_name = weapon.weaponName;
     }
 
+    /// <summary>
+    /// Function to clear previous weapon by destroying its prefab
+    /// </summary>
     private void ClearCurrentWeapon()
     {
         if(weapon != null)

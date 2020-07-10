@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Health bar UI control class
+/// </summary>
 public class HealhBarMobUI : MonoBehaviour
 {
     public Slider slider;

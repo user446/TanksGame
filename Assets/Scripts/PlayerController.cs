@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// Player Controller class to control Player prefab
+/// Holds keycodes of all keys that are used in player movement and control
+/// Allows to change movement and rotation speed of a player in Inspector
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     public KeyCode keyMoveForward;
