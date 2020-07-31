@@ -4,6 +4,8 @@
 /// Monster brain class
 /// Manages all monster movements and actions
 /// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Combat))]
 public class MonsterBrain : MonoBehaviour
 {
     public float moveSpeed;

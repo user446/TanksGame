@@ -5,6 +5,10 @@ using UnityEngine;
 /// Player Base class
 /// It's a root for all player based scripts
 /// </summary>
+[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Armor))]
+[RequireComponent(typeof(Combat))]
+[RequireComponent(typeof(PlayerController))]
 public class PlayerBase : MonoBehaviour
 {
     public List<GameObject> possibleWeapons;

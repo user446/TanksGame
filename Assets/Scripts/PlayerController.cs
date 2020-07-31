@@ -6,6 +6,7 @@ using System;
 /// Holds keycodes of all keys that are used in player movement and control
 /// Allows to change movement and rotation speed of a player in Inspector
 /// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     public KeyCode keyMoveForward;

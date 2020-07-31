@@ -4,6 +4,12 @@ using System;
 /// <summary>
 /// Monster base class
 /// </summary>
+[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Armor))]
+[RequireComponent(typeof(Combat))]
+[RequireComponent(typeof(MonsterBrain))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class MonsterBase : MonoBehaviour
 {
     public Health health;

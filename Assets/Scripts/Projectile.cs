@@ -3,6 +3,8 @@
 /// <summary>
 /// Projectile class that destroys projectile after any collision outside Player prefab
 /// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class Projectile : MonoBehaviour
 {
     public float damage;
