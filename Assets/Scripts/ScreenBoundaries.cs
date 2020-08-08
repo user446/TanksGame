@@ -2,6 +2,7 @@
 
 /// <summary>
 /// Class to keep transform inside of screen boundaries
+/// (Currently not used)
 /// </summary>
 public class ScreenBoundaries : MonoBehaviour
 {

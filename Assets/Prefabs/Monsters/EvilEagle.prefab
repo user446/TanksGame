@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 7076333322720644151}
   - component: {fileID: 7076333322720644552}
   - component: {fileID: 7076333322720644553}
+  - component: {fileID: 2641501947850833273}
   m_Layer: 9
   m_Name: EvilEagle
   m_TagString: Monster
@@ -378,7 +379,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.0001
-  m_LinearDrag: 0
+  m_LinearDrag: 50
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -440,6 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  nextWaypointDistance: 3
 --- !u!114 &7076333322720644151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +490,34 @@ MonoBehaviour:
   maxHealth: 150
   currentHealth: 100
   isDead: 0
+--- !u!114 &2641501947850833273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076333322720644554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 1
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &9015661748608233713
 GameObject:
   m_ObjectHideFlags: 0
