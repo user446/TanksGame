@@ -1,5 +1,7 @@
 Simple tank vs. monsters game
 
+![alt text](https://i.imgur.com/lV0oZNH.png)
+
 Control the Tank against hordes of monsters!  
 Up to 10 monsters in one scene, each one generated randomly behind the scene. Each monster have armor, attack speed, damage and many other properties.  
 Game includes 6 types of monsters and 5 types of weapons, each have unique artstyle and features.  
